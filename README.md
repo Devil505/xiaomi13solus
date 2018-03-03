@@ -22,9 +22,9 @@ I didn't really check.
 
 Backlight works perfectly !
 
-### Display
+### DISPLAY
 
-You can download a ICC profile from this repo.
+You can download a ICC profile from this repo. (WORK IN PROGRESS)
 
 ### NVIDIA & Intel GPU
 
@@ -34,44 +34,57 @@ Now, how to switch from NVIDIA to Intel to preserve some battery energy ?
 
 You can check the primary GPU with
 
-'linux-driver-management status'
+`linux-driver-management status`
 
-check 'man linux-driver-management' for more details
+check `man linux-driver-management` for more details
 
 You must have some thing like:
 
-> ╒ Hardware Platform
-> ╞ Platform Vendor : Timi
-> ╘ Platform Model  : TM1604>
->
->NVIDIA Optimus
->
-> ╒ Primary GPU (iGPU)
-> ╞ Device Name   : HD Graphics 620
-> ╞ Manufacturer  : Intel Corporation
-> ╞ Product ID    : 0x5916
-> ╞ Vendor ID     : 0x8086
-> ╞ X.Org PCI ID  : PCI:0:2:0
-> ╘ Boot VGA      : yes
->
-> ╒ Secondary GPU (dGPU)
-> ╞ Device Name   : Device 1d12
-> ╞ Manufacturer  : NVIDIA Corporation
-> ╞ Product ID    : 0x1d12
-> ╞ Vendor ID     : 0x10de
-> ╞ X.Org PCI ID  : PCI:1:0:0
-> ╘ Boot VGA      : no
+```
+ ╒ Hardware Platform
+ ╞ Platform Vendor : Timi
+ ╘ Platform Model  : TM1604>
 
-Other alternative: [systemd NVIDIA}(https://github.com/MarechalLima/Systemd-Nvidia-Entry)
+NVIDIA Optimus
+
+ ╒ Primary GPU (iGPU)
+ ╞ Device Name   : HD Graphics 620
+ ╞ Manufacturer  : Intel Corporation
+ ╞ Product ID    : 0x5916
+ ╞ Vendor ID     : 0x8086
+ ╞ X.Org PCI ID  : PCI:0:2:0
+ ╘ Boot VGA      : yes
+
+ ╒ Secondary GPU (dGPU)
+ ╞ Device Name   : Device 1d12
+ ╞ Manufacturer  : NVIDIA Corporation
+ ╞ Product ID    : 0x1d12
+ ╞ Vendor ID     : 0x10de
+ ╞ X.Org PCI ID  : PCI:1:0:0
+ ╘ Boot VGA      : no
+```
+
+Other alternative: [systemd NVIDIA](https://github.com/MarechalLima/Systemd-Nvidia-Entry)
 
 ### FINGERPRINT
 
 Xiaomi use a fingerprint from elan tech, this model is not yet supported by libfprint but someone work on it, check [here](https://github.com/iafilatov/libfprint).
 
-I will provide packages soon !
+Install the packages from this repo.
+
+WIP
 
 ### BATTERY LIFE
 
-Install TLP with 'sudo eopkg it tlp'
+Install TLP with `sudo eopkg it tlp`
 
-Use the tlp configuration file from this repo for '/etc/default/tlp'
+`sudo tlp start`
+`sudo tlp-stat | grep "TLP power save"`
+You should got:
+`TLP power save = enabled`
+
+Add TLP for every boot:
+
+`sudo systemctl enable tlp`
+
+Use the tlp configuration file from this repo for `/etc/default/tlp`
