@@ -14,6 +14,10 @@ Installation is performed properly with UEFI support.
 
 Works perfectly !
 
+### SOUND
+
+Works perfectly !
+
 ### BLUETOOTH
 
 I didn't really check.
@@ -70,9 +74,13 @@ Other alternative: [systemd NVIDIA](https://github.com/MarechalLima/Systemd-Nvid
 
 Xiaomi use a fingerprint from elan tech, this model is not yet supported by libfprint but someone work on it, check [here](https://github.com/iafilatov/libfprint).
 
-Install the packages from this repo.
+Install the packages libfprint, fprint_demo and fprintd from this repo.
 
-WIP
+Try `sudo fprint_demo` to test the fingerprint
+
+You can also do it via fpintd with `frpintd-enroll` and `fprintd-verify`
+
+**NOT FULLY OPERATIONAL** check also this [link](https://bugs.launchpad.net/ubuntu/+source/libfprint/+bug/1641290)
 
 ### BATTERY LIFE
 
@@ -80,11 +88,13 @@ Install TLP with `sudo eopkg it tlp`
 
 `sudo tlp start`
 `sudo tlp-stat | grep "TLP power save"`
+
 You should got:
+
 `TLP power save = enabled`
 
 Add TLP for every boot:
 
 `sudo systemctl enable tlp`
 
-Use the tlp configuration file from this repo for `/etc/default/tlp`
+Use the tlp configuration file for your conf file: `/etc/default/tlp`
