@@ -1,4 +1,4 @@
-# Xiaomi Air 13 with Solus Tutorial
+# Xiaomi Air 13 (2017) with Solus Tutorial
 
 ## Installation
 
