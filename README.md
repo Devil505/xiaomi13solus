@@ -28,7 +28,7 @@ Backlight works perfectly !
 
 ### DISPLAY
 
-You can download a ICC profile from this repo. (WORK IN PROGRESS)
+You can use my ICC profile provided.
 
 ### NVIDIA & Intel GPU
 
