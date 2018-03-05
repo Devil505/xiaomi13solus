@@ -32,43 +32,9 @@ You can use my ICC profile provided.
 
 ### NVIDIA & Intel GPU
 
-You can install NVIDIA driver via Solus Hardware Drivers software easily.
+Linux Driver Management from Solus doesn't supporter (yet) the Optimus (possibility to switch easily to GPU we want)
 
-Now, how to switch from NVIDIA to Intel to preserve some battery energy ?
-
-You can check the primary GPU with
-
-`linux-driver-management status`
-
-check `man linux-driver-management` for more details
-
-You must have some thing like:
-
-```
- ╒ Hardware Platform
- ╞ Platform Vendor : Timi
- ╘ Platform Model  : TM1604>
-
-NVIDIA Optimus
-
- ╒ Primary GPU (iGPU)
- ╞ Device Name   : HD Graphics 620
- ╞ Manufacturer  : Intel Corporation
- ╞ Product ID    : 0x5916
- ╞ Vendor ID     : 0x8086
- ╞ X.Org PCI ID  : PCI:0:2:0
- ╘ Boot VGA      : yes
-
- ╒ Secondary GPU (dGPU)
- ╞ Device Name   : Device 1d12
- ╞ Manufacturer  : NVIDIA Corporation
- ╞ Product ID    : 0x1d12
- ╞ Vendor ID     : 0x10de
- ╞ X.Org PCI ID  : PCI:1:0:0
- ╘ Boot VGA      : no
-```
-
-Other alternative: [systemd NVIDIA](https://github.com/MarechalLima/Systemd-Nvidia-Entry)
+There is alternative via [this script](https://github.com/MarechalLima/Solus-Optimus-Switch).
 
 ### FINGERPRINT
 
