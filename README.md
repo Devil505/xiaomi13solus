@@ -40,7 +40,7 @@ There is alternative via [this script](https://github.com/MarechalLima/Solus-Opt
 
 Xiaomi use a fingerprint from elan tech, this model is not yet supported by libfprint but someone work on it, check [here](https://github.com/iafilatov/libfprint).
 
-Install the packages libfprint, fprint_demo and fprintd from this repo.
+Install the eopkg packages of libfprint, fprint_demo and fprintd I provide.
 
 Try `sudo fprint_demo` to test the fingerprint
 
@@ -50,9 +50,12 @@ You can also do it via fpintd with `frpintd-enroll` and `fprintd-verify`
 
 ### BATTERY LIFE
 
-Install TLP with `sudo eopkg it tlp`
+Install TLP with:
+
+`sudo eopkg it tlp`
 
 `sudo tlp start`
+
 `sudo tlp-stat | grep "TLP power save"`
 
 You should got:
